@@ -1,19 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login/Login";
-import Signup from "./Pages/Login/Signup";
-import Feed from "./Pages/Feed/Feed";
-import Explore from "./Pages/Explore/Explore";
-import Notification from "./Pages/Notification/Notification";
-import Message from "./Pages/Messages/Message";
-import ProtectedRoute from "./Pages/ProtectedRoute";
-import Lists from "./Pages/Lists/Lists";
-import Profile from "./Pages/Profile/Profile";
-import More from "./Pages/more/More";
-import { UserAuthContextProvider } from "./context/UserAuthContext";
-import Bookmark from "./Pages/Bookmark/Bookmark";
+import Home from "./pages/home";
+import Login from "./pages/login/login";
+import Signup from "./pages/login/signup";
+import Feed from "./pages/Feed/Feed";
+import Explore from "./pages/Explore/Explore";
+import Notification from "./pages/Notification/Notification";
+import Message from "./pages/Messages/Message";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import Lists from "./pages/Lists/Lists";
+import Profile from "./pages/Profile/Profile";
+import More from "./pages/More/More";
+import { UserAuthContextProvider } from "./Context/Userauthcontext";
+import Bookmark from "./pages/Bookmark/Bookmark";
 function App() {
   return (
     <div className="app">

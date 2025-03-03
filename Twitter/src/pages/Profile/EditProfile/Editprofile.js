@@ -77,13 +77,16 @@ const Editprofile = ({ user, loggedinuser }) => {
       website,
       dob,
     };
-    fetch(`http://localhost:5000/userupdate/${user?.email}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(editinfo),
-    })
+    fetch(
+      `https://twiller-twitter-clone-qbey.onrender.com/userupdate/${user?.email}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(editinfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log("done", data);

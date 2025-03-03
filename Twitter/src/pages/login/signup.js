@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import twitterimg from "../../image/twitter.jpeg";
+import twitterimg from "../../images/twitterimg.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleButton from "react-google-button";
-import { useUserAuth } from "../../context/UserAuthContext";
+import { useUserAuth } from "../../Context/Userauthcontext";
 import "./login.css";
 
 const Signup = () => {
@@ -26,7 +26,7 @@ const Signup = () => {
         name: name,
         email: email,
       };
-      fetch("http://localhost:5000/register", {
+      fetch("https://twiller-twitter-clone-qbey.onrender.com/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",

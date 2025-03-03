@@ -1,5 +1,5 @@
 import React from "react";
-import Widgets from "./Widgets/Widgets";
+import Widgets from "./widget/widget";
 import Sidebar from "./Sidebar/sidebar";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";

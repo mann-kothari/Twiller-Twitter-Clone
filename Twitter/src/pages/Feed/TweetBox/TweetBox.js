@@ -3,7 +3,7 @@ import "./Tweetbox.css";
 import { Avatar, Button } from "@mui/material";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import axios from "axios";
-import { useUserAuth } from "../../../context/UserAuthContext";
+import { useUserAuth } from "../../../Context/Userauthcontext";
 import useLoggedinuser from "../../../hooks/useLoggedinuser";
 const Tweetbox = () => {
   const [post, setpost] = useState("");
@@ -41,7 +41,9 @@ const Tweetbox = () => {
   const handletweet = (e) => {
     e.preventDefault();
     if (user?.providerData[0]?.providerId === "password") {
-      fetch(`http://localhost:5000/loggedinuser?email=${email}`)
+      fetch(
+        `https://twiller-twitter-clone-qbey.onrender.com/loggedinuser?email=${email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           // console.log(data[0].name);
@@ -65,7 +67,7 @@ const Tweetbox = () => {
       // console.log(userpost);
       setpost("");
       setimageurl("");
-      fetch("http://localhost:5000/post", {
+      fetch("https://twiller-twitter-clone-qbey.onrender.com/post", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -7,7 +7,7 @@ import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 import LockResetIcon from "@mui/icons-material/LockReset";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import AddLinkIcon from "@mui/icons-material/AddLink";
-import Editprofile from "../Editprofile/Editprofile";
+import Editprofile from "../EditProfile/Editprofile";
 import axios from "axios";
 import useLoggedinuser from "../../../hooks/useLoggedinuser";
 const Mainprofile = ({ user }) => {
@@ -18,7 +18,9 @@ const Mainprofile = ({ user }) => {
   const [post, setpost] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userpost?email=${user?.email}`)
+    fetch(
+      `https://twiller-twitter-clone-qbey.onrender.com/userpost?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setpost(data);
@@ -45,13 +47,16 @@ const Mainprofile = ({ user }) => {
         };
         setisloading(false);
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
-            method: "PATCH",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(usercoverimage),
-          })
+          fetch(
+            `https://twiller-twitter-clone-qbey.onrender.com/userupdate/${user?.email}`,
+            {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(usercoverimage),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log("done", data);
@@ -84,13 +89,16 @@ const Mainprofile = ({ user }) => {
         };
         setisloading(false);
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
-            method: "PATCH",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(userprofileimage),
-          })
+          fetch(
+            `https://twiller-twitter-clone-qbey.onrender.com/userupdate/${user?.email}`,
+            {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(userprofileimage),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log("done", data);

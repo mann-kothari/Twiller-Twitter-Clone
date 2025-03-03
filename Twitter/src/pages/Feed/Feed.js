@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Feed.css";
 import Posts from "./Posts/Posts";
-import Tweetbox from "./Tweetbox/Tweetbox";
+import Tweetbox from "./TweetBox/TweetBox";
 const Feed = () => {
   const [post, setpost] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/post")
+    fetch("https://twiller-twitter-clone-qbey.onrender.com/post")
       .then((res) => res.json())
       .then((data) => {
         setpost(data);

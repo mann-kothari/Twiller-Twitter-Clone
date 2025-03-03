@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import twitterimg from "../../image/twitter.jpeg";
+import twitterimg from "../../images/twitterimg.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleButton from "react-google-button";
 import { useNavigate, Link } from "react-router-dom";
 import "./login.css";
-import { useUserAuth } from "../../context/UserAuthContext";
+import { useUserAuth } from "../../Context/Userauthcontext";
 const Login = () => {
   const [email, seteamil] = useState("");
   const [password, setpassword] = useState("");
