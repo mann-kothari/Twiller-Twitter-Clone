@@ -165,16 +165,3 @@
   color: var(--twitter-color);
   cursor: pointer;
 }
-
-.obtain-location{
-  color: rgb(17, 177, 241);
-  border: none;
-  font-size: medium;
-  background-color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-left: 18px;
-}
-
-.obtain-location:hover{
-  font-weight: bold;
-}

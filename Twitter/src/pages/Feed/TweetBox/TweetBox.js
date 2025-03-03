@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./TweetBox.css";
+import "./Tweetbox.css";
 import { Avatar, Button } from "@mui/material";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import axios from "axios";
-import { useUserAuth } from "../../../Context/Userauthcontext";
+import { useUserAuth } from "../../../context/UserAuthContext";
 import useLoggedinuser from "../../../hooks/useLoggedinuser";
 const Tweetbox = () => {
   const [post, setpost] = useState("");

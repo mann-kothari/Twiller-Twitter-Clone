@@ -7,7 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "./firbase";
 
 const userAuthContext = createContext();
 
@@ -17,25 +17,23 @@ export function UserAuthContextProvider(props) {
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
-
   function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log("User signed up:", user);
+        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error("Error during sign-up:", errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
+        // ..
       });
   }
-
   function logOut() {
     return signOut(auth);
   }
-
   function googleSignIn() {
     const googleAuthProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleAuthProvider);
@@ -43,7 +41,7 @@ export function UserAuthContextProvider(props) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      console.log("Auth state changed:", currentuser);
+      console.log("Auth", currentuser);
       setUser(currentuser);
     });
 
@@ -59,7 +57,7 @@ export function UserAuthContextProvider(props) {
     </userAuthContext.Provider>
   );
 }
-
+// export default UserAuthContextProvider
 export function useUserAuth() {
   return useContext(userAuthContext);
 }

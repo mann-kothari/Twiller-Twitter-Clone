@@ -4,6 +4,10 @@ import Mainprofile from "./Mainprofile/Mainprofile";
 import { useUserAuth } from "../../Context/Userauthcontext";
 const Profile = () => {
   const { user } = useUserAuth();
+  // const user = {
+  //   displayname: "bithead",
+  //   email: "bithead@gmail.com",
+  // };
   return (
     <div className="profilePage">
       <Mainprofile user={user} />

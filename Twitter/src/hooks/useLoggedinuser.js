@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useUserAuth } from "../Context/Userauthcontext";
+import React, { useEffect, useState } from "react";
+import { useUserAuth } from "../context/UserAuthContext";
 const useLoggedinuser = () => {
   const { user } = useUserAuth();
   const email = user?.email;

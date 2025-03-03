@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-import twitterimg from "../../images/twitterimg.jpeg";
+import React, { useState, useContext } from "react";
+import twitterimg from "../../image/twitter.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleButton from "react-google-button";
 import { useNavigate, Link } from "react-router-dom";
 import "./login.css";
-import { useUserAuth } from "../../Context/Userauthcontext";
-import ForgotPassword from "../../components/ForgotPassword";
-
+import { useUserAuth } from "../../context/UserAuthContext";
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [email, seteamil] = useState("");
+  const [password, setpassword] = useState("");
+  const [error, seterror] = useState("");
   const navigate = useNavigate();
   const { googleSignIn, logIn } = useUserAuth();
-
-  const handleSubmit = async (e) => {
+  const handlesubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    seterror("");
     try {
       await logIn(email, password);
       navigate("/");
     } catch (error) {
-      setError(error.message);
+      seterror(error.message);
       window.alert(error.message);
     }
   };
-
-  const handleGoogleSignIn = async (e) => {
+  const hanglegooglesignin = async (e) => {
     e.preventDefault();
     try {
       await googleSignIn();
@@ -36,39 +31,29 @@ const Login = () => {
       console.log(error.message);
     }
   };
-
-  // Show Forgot Password component
-  if (showForgotPassword) {
-    return (
-      <ForgotPassword onBackToLogin={() => setShowForgotPassword(false)} />
-    );
-  }
-
   return (
     <>
       <div className="login-container">
         <div className="image-container">
-          <img src={twitterimg} className="image" alt="twitterimg" />
+          <img src={twitterimg} className=" image" alt="twitterimg" />
         </div>
         <div className="form-container">
           <div className="form-box">
             <TwitterIcon style={{ color: "skyblue" }} />
             <h2 className="heading">Happening now</h2>
-            {error && <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
+            {error && <p>{error.message}</p>}
+            <form onSubmit={handlesubmit}>
               <input
                 type="email"
                 className="email"
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => seteamil(e.target.value)}
               />
               <input
                 type="password"
                 className="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setpassword(e.target.value)}
               />
               <div className="btn-login">
                 <button type="submit" className="btn">
@@ -81,14 +66,9 @@ const Login = () => {
               <GoogleButton
                 className="g-btn"
                 type="light"
-                onClick={handleGoogleSignIn}
+                onClick={hanglegooglesignin}
               />
             </div>
-            <button
-              className="forgot-password-btn"
-              onClick={() => setShowForgotPassword(true)}>
-              Forgot Password?
-            </button>
           </div>
           <div>
             Don't have an account

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import twitterimg from "../../images/twitterimg.jpeg";
+import twitterimg from "../../image/twitter.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleButton from "react-google-button";
-import { useUserAuth } from "../../Context/Userauthcontext";
+import { useUserAuth } from "../../context/UserAuthContext";
 import "./login.css";
 
 const Signup = () => {
