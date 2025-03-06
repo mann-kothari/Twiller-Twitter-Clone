@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Tweetbox.css";
+import "./TweetBox.css";
 import { Avatar, Button } from "@mui/material";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import axios from "axios";

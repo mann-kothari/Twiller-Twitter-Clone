@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Modal } from "@mui/material";
-import Button from "@mui/material";
+// import Button from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
@@ -77,16 +77,13 @@ const Editprofile = ({ user, loggedinuser }) => {
       website,
       dob,
     };
-    fetch(
-      `https://twiller-twitter-clone-qbey.onrender.com/userupdate/${user?.email}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(editinfo),
-      }
-    )
+    fetch(`http://localhost:5000/userupdate/${user?.email}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(editinfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log("done", data);

@@ -18,8 +18,8 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./sidebar.css";
-import Customlink from "./Customlink";
-import Sidebaroption from "./Sidebaroption";
+import Customlink from "./CustomLink";
+import Sidebaroption from "./SidebarOption";
 import { useNavigate } from "react-router-dom";
 import useLoggedinuser from "../../hooks/useLoggedinuser";
 const Sidebar = ({ handlelogout, user }) => {
